@@ -8,17 +8,17 @@
 
 ## 데이터획득
 ##### 데이터 획득 경로
-지하철역 위치 : https://data.seoul.go.kr/dataList/OA-21232/S/1/datasetView.do 
-버스정류장 위치 : https://data.seoul.go.kr/dataList/OA-15067/S/1/datasetView.do (22.3.29 데이터 사용)
-지하철 승하차 인원 : https://data.seoul.go.kr/dataList/OA-21224/S/1/datasetView.do (21.7 데이터 사용)
-버스 승하차 인원 : https://data.seoul.go.kr/dataList/OA-21225/S/1/datasetView.do 
-은행 : https://data.seoul.go.kr/dataList/10129/S/2/datasetView.do
-회사 : https://data.seoul.go.kr/dataList/103/S/2/datasetView.do
-병원 : https://www.data.go.kr/data/15069540/fileData.do
-학교 : 
-자동차 등록현황 : https://data.seoul.go.kr/dataList/OA-21236/F/1/datasetView.do
-연령대별 생활인구 : http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do
-음식점 : https://data.seoul.go.kr/dataList/10154/S/2/datasetView.do
+지하철역 위치 : https://data.seoul.go.kr/dataList/OA-21232/S/1/datasetView.do  
+버스정류장 위치 : https://data.seoul.go.kr/dataList/OA-15067/S/1/datasetView.do (22.3.29 데이터 사용)  
+지하철 승하차 인원 : https://data.seoul.go.kr/dataList/OA-21224/S/1/datasetView.do (21.7 데이터 사용)  
+버스 승하차 인원 : https://data.seoul.go.kr/dataList/OA-21225/S/1/datasetView.do  
+은행 : https://data.seoul.go.kr/dataList/10129/S/2/datasetView.do  
+회사 : https://data.seoul.go.kr/dataList/103/S/2/datasetView.do  
+병원 : https://www.data.go.kr/data/15069540/fileData.do  
+학교 :  
+자동차 등록현황 : https://data.seoul.go.kr/dataList/OA-21236/F/1/datasetView.do  
+연령대별 생활인구 : http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do  
+음식점 : https://data.seoul.go.kr/dataList/10154/S/2/datasetView.do  
 카페 : https://www.data.go.kr/data/15083033/fileData.do
 아파트 수(주택수) : https://data.seoul.go.kr/dataList/10585/S/2/datasetView.do 
 대규모 점포수 :　https://data.seoul.go.kr/dataList/OA-16096/S/1/datasetView.do
