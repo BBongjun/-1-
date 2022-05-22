@@ -16,12 +16,14 @@
 
 ## 데이터획득
 #### 변수 설정
-따릉이 대여소와 대여/반납<br>
-(3개 feature : return_day, rent_day, rental_stop)<br>
-<span style ='color:blue'>토지특성인 시설물 수</span><br>(12개 feature : large_store(대규모점포), company, hospital, restaurant, park, cafe, house, bank, car, school, bus_stop, subway_station)<br>
-대중교통(버스, 지하철)이용에 따른 승객 승하차 수<Br>(4개 feature : bus_geton_people, bus_getoff_people, subway_geton_people, subway_getoff_people)<br>
-지역특성인 하루 평균 연령대별/성별 생활인구<br>
-(18개 feature : M_child, M_teenager, M_20, M_30, M_40, M_50, M_60, M_over70, W_child, W_teenager, W_20, W_30, W_40, W_50, W_60, W_over70, M_sum, W_sum)<br>
+- 따릉이 대여소와 대여/반납
+  - (3개 feature : return_day, rent_day, rental_stop)<br>
+- 토지특성인 시설물 수
+  - (12개 feature : large_store(대규모점포), company, hospital, restaurant, park, cafe, house, bank, car, school, bus_stop, subway_station)<br>
+- 대중교통(버스, 지하철)이용에 따른 승객 승하차 수
+  - (4개 feature : bus_geton_people, bus_getoff_people, subway_geton_people, subway_getoff_people)<br>
+- 지역특성인 하루 평균 연령대별/성별 생활인구
+  - (18개 feature : M_child, M_teenager, M_20, M_30, M_40, M_50, M_60, M_over70, W_child, W_teenager, W_20, W_30, W_40, W_50, W_60, W_over70, M_sum, W_sum)<br>
 총 37개의 feature가 있다.
 
 #### 데이터 획득 경로(독립변수)
@@ -46,12 +48,12 @@
 ---> 여러 데이터를 모으다보니 데이터 시점이 맞지 않는 경우가 발생하는 한계가 있었다. 데이터의 시점을 최대한 21년 7월로 통일시켰다. 
 
 
-#### 데이터 획득 경로(독립변수)  
-
-
-
 ## 분석 과정(EDA, 전처리, 모델링, 후처리, 검증 등)
 ### 1.EDA(Clustering, 시각화)
+
+
+
+
 
 ### 2.전처리
 
