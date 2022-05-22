@@ -11,7 +11,7 @@
 
 <img src ="https://user-images.githubusercontent.com/105912035/169682242-4521b6f0-6355-4f21-a627-48f1091f4a17.png" width="600" heigth="600"/>
 <기사출처> https://www.news1.kr/articles/?4579584 <br>
-공공자전거 무인대여시스템은 2015년 서울시에서 시작되어 대전(타슈), 세종(뉴 어울링), 창원(누비자), 광주(타랑께)에 설치되면서, 점차 전국적으로 확대되고있다. 위에 기사에 따르면 22년 초, 부산 기장군에서 처음으로 공공자전거 무인대여시스템을 도입했다. 이처럼 부산 이외의 다른 도시에도 공공자전거 무인대여시스템을 도입할 경우, 우리가 파악한 요인들을 통해 대여량 예측을 하여 대여소 설치에 근거자료로 도움이 될 수 있을 것 같다고 생각하여 모델을 만들어보기로 하였다.  
+공공자전거 무인대여시스템은 2015년 서울시에서 시작되어 대전(타슈), 세종(뉴 어울링), 창원(누비자), 광주(타랑께)에 설치되면서, 점차 전국적으로 확대되고있다. 위에 기사에 따르면 22년 초, 부산 기장군에서 처음으로 공공자전거 무인대여시스템을 도입했다.<br> 이처럼 부산 이외의 다른 도시에도 공공자전거 무인대여시스템을 도입할 경우, 우리가 파악한 요인들을 통해 대여량 예측을 하여 대여소 설치에 근거자료로 도움이 될 수 있을 것 같다고 생각하여 모델을 만들어보기로 하였다.  
 
 
 ## 데이터획득
@@ -58,8 +58,8 @@
   - 행정동별_버스_승하차인원.ipynb  
   - 행정동별_지하철역_승하차인원.ipynb  
   - data_combining.ipynb  
-## 분석 과정(EDA, 전처리, 모델링, 후처리, 검증 등)
-### 1.EDA
+## 데이터 분석
+### EDA
 <img src ="https://user-images.githubusercontent.com/105912035/169684355-b0530afe-7a5c-4ad3-a2cf-5049fa9db64b.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/169684671-47a416cb-759a-4c60-bb4e-a64b11db7f12.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/169684437-af583857-cbac-4136-9809-dda8d952c4ca.png" width="600" heigth="600"/>
@@ -83,13 +83,50 @@
 
 ![image](https://user-images.githubusercontent.com/105912035/169685195-28bc524e-2530-492e-9f14-bb2e93893de3.png)
 - data들의 분포를 확인해본 결과, 대부분 평균에 몰려있음을 확인했다.
-### 2.전처리
 
-### 3.모델링
+![image](https://user-images.githubusercontent.com/105912035/169685745-65b58b0d-688b-4f61-84cd-1afcb3efba10.png)
+- 연령대별 생활인구 변수끼리의 상관계수가 0.7 이상으로 상관관계가 매우 높은 것을 확인할 수 있다.<br>
+회귀분석에서 독립변수들 사이의 상관관계가 높으면, 회귀분석의 전체가정인 독립변수들 간에 상관관계가 높으면 안된다는 조건을 위배하기 때문에<br> 
+연령대별 생활인구와 성별 전체 생활인구 feature는 제외시키고 회귀분석을 진행하겠습니다.<br>
+### 1.회귀분석 - 전처리
+대여량을 예측할 것이므로 rent_day(대여량)를 타겟으로 지정하고 <br> target과 관련없는 변수인 dong_name(행정동 이름), code_dong(행정동코드), 반납량(return_day), 대여소 수(rental_stop), bus_geton_people(하루 평균 버스 승차 승객 수), subway_geton_people(하루 평균 지하철 승차 승객 수),<br> 그리고 상관관계분석을 진행하며 상관관계가 높았던 연령대별 생활인구 변수들을 제외시킨 dataframe을 생성합니다.
+### 1.회귀분석 - 모델링
+Ridge, Lasso 회귀분석 모델은 GridsearchCV 와 Kfold를 이용하여 bset model을 선정한 후, LinearRegression 모델을 포함한 3개의 예측모델 중 최고 성능을 보이는 모델을 선정하려고 한다.
 
-### 4.후처리
+평가지표로는 R-squared와 MAE로 선정했다. 대여량을 예측하는 것이기 때문에 MAE가 적당한 평가지표라고 생각했다. Validation 시 평가지표로는 best R-squared를 가진 모델을 best모델이라고 생각했다.
 
-### 5.검증
+#### Ridge
+[Validation]  
+Ridge모델의 validation 결과로 alpha:100 일때, R-squared:0.0058로 가장 높아 Ridge(alpha:100)을 best_model로 선정하였다.  
+[Test]  
+Ridge(alpha:100)로 test셋에 대하여 검증했을 때, R-squared:-0.0398, MAE:19.967로 안좋은 모델 성능을 보였다.  
+성능 향상을 기대하며, Wrapper Method와 PCA기법을 사용하여 다시 test셋에 대하여 성능 검증을 실시했다.  
+- Wraaper 사용 시: R-squared:-0.0282, MAE:19.863  
+- PCA 사용 시: R-squared:-0.035, MAE:19.859
+-------> 모델 향상을 위해 여러가지 방법을 사용해보았지만, 의미있는 모델을 생성하기 힘들다고 판단하였습니다.
+
+#### Lasso  
+[Validation]  
+Lasso모델의 validation 결과로 alpha:0.1 일때, R-squared:0.0058로 가장 높아 Lasso(alpha:0.1)을 best_model로 선정하였다.   
+[Test]   
+Lasso(alpha:0.1)로 test셋에 대하여 검증했을 때, R-squared:-0.0238, MAE:18.0328로 안좋은 모델 성능을 보였다.  
+
+#### Linear
+[Test]   
+Lasso(alpha:0.1)로 test셋에 대하여 검증했을 때, R-squared:-0.14457, MAE:16.9705로 안좋은 모델 성능을 보였다.  
+
+### 1.결론
+[결론]  
+모든 예측모델의 설명계수가 음수(-)값을 가진다. --> 예측모델 만들기 실패.. 해석할 수 있는 의미있는 모델을 만들지 못하였다.
+
+### 2.Clustering - 전처리
+
+### 2.Clustering - 모델링
+
+### 2.결론
+[결론]  
+
+
 
 ## 기대 효과:
 공공자전거가 없는 지역에 새로 설치할 때 동일한 feature들을 이용해 추후 공공자전거 추가 입지 선정에 있어 근거 자료로 활용될 것으로 기대됨.
