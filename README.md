@@ -65,17 +65,24 @@
 <img src ="https://user-images.githubusercontent.com/105912035/169684437-af583857-cbac-4136-9809-dda8d952c4ca.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/169684443-20befd5b-0913-4308-b2fe-7e09c4ed6e24.png" width="600" heigth="600"/>
 
-- 시설물 feature가 min이 0인 것을 보아 특정 행정동에는 시설물 수가 없을 수도 있음을 확인할 수 있습니다.  
-- 생활인구 feature 와 다른 시설물 feature간에 수치가 차이가 너무 크기에 분석을 진행할 때는 scaling이 필요함을 알 수 있습니다.  
-- 지하철과 버스 승/하차 승객 수를 비교해보면 지하철을 이용하는 사람들이 훨씬 많음을 알 수 있습니다.  
+- 시설물 feature가 min이 0인 것을 보아 특정 행정동에는 시설물 수가 없을 수도 있음을 확인할 수 있다.  
+- 생활인구 feature 와 다른 시설물 feature간에 수치가 차이가 너무 크기에 분석을 진행할 때는 scaling이 필요함을 알 수 있다.  
+- 지하철과 버스 승/하차 승객 수를 비교해보면 지하철을 이용하는 사람들이 훨씬 많음을 알 수 있다.  
 
 ![image](https://user-images.githubusercontent.com/105912035/169684761-ce772689-bdfb-455b-ab46-0dc7378d28f9.png)
 ![image](https://user-images.githubusercontent.com/105912035/169684765-001fa82a-22b8-416a-8e4a-3949b1184048.png)
 ![image](https://user-images.githubusercontent.com/105912035/169684781-bf72cc86-030a-444e-93f2-e948cf571ad6.png)
+- 결측치 여부를 확인해 본 결과 모든 feature에 대해 없음을 확인했다.
 
+![image](https://user-images.githubusercontent.com/105912035/169685050-e1ba645d-712d-4d1e-967a-5b7d2f8de4f0.png)
+![image](https://user-images.githubusercontent.com/105912035/169685057-a14db256-073b-47d7-b292-6060011dbd00.png)
+- feature의 type을 확인해본 결과 float와 int로 구성되어있음을 확인했다.
 
+![image](https://user-images.githubusercontent.com/105912035/169685141-03fa6094-9bd5-40f6-8588-dc5b79f2df69.png)
+- 연령대별 생활인구 feature를 제외하고 boxplot을 확인해본 결과 행정동별 자동차 등록현황인 car feature가 다른 변수들에 비해 data분포가 큰 것으로 보아 연령대별 생활인구 feature를 제외해도 scaling을 진행해야함을 알 수 있다.
 
-
+![image](https://user-images.githubusercontent.com/105912035/169685195-28bc524e-2530-492e-9f14-bb2e93893de3.png)
+- data들의 분포를 확인해본 결과, 대부분 평균에 몰려있음을 확인했다.
 ### 2.전처리
 
 ### 3.모델링
