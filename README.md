@@ -11,19 +11,22 @@
 
 <img src ="https://user-images.githubusercontent.com/105912035/169682242-4521b6f0-6355-4f21-a627-48f1091f4a17.png" width="600" heigth="600"/>
 <기사출처> https://www.news1.kr/articles/?4579584 <br>
-공공자전거 무인대여시스템은 2015년 서울시에서 시작되어 대전(타슈), 세종(뉴 어울링), 창원(누비자), 광주(타랑께)에 설치되면서, 점차 전국적으로 확대되고있다. 얼마전 위에 기사에 따르면 22년 초, 부산 기장군에서 처음으로 공공자전거 무인대여시스템을 도입했다. 이처럼 부산 이외의 다른 도시에도 공공자전거 무인대여시스템을 도입할 때, 우리가 파악한 요인들을 통해 대여량 예측을 하여 다른 도시에서 대여소를 설치할 때, 근거자료로 도움이 될 수 있을것같다고 생각하여 모델을 만들어보기로 하였다.  
+공공자전거 무인대여시스템은 2015년 서울시에서 시작되어 대전(타슈), 세종(뉴 어울링), 창원(누비자), 광주(타랑께)에 설치되면서, 점차 전국적으로 확대되고있다. 위에 기사에 따르면 22년 초, 부산 기장군에서 처음으로 공공자전거 무인대여시스템을 도입했다. 이처럼 부산 이외의 다른 도시에도 공공자전거 무인대여시스템을 도입할 경우, 우리가 파악한 요인들을 통해 대여량 예측을 하여 대여소 설치에 근거자료로 도움이 될 수 있을 것 같다고 생각하여 모델을 만들어보기로 하였다.  
 
 
 ## 데이터획득
 #### 변수 설정
+서울시 행정동 426곳 중 따릉이 대여소가 존재하는 416곳의 토지특성인 시설물 수와 대중교통(버스,지하철)이용에 따른 하루 평균 승객 승하차 수, 그리고 지역특성인 하루 평균 연령대별 생활인구와 성별 전체 생활인구의 데이터를 통해 행정동별 한개 대여소의 하루 평균 대여량을 예측하겠다.
+
 - 따릉이 대여소와 대여/반납
-  - (3개 feature : return_day, rent_day, rental_stop)<br>
+  - (3개 feature : return_day, rent_day, rental_stop)
 - 토지특성인 시설물 수
-  - (12개 feature : large_store(대규모점포), company, hospital, restaurant, park, cafe, house, bank, car, school, bus_stop, subway_station)<br>
+  - (12개 feature : large_store(대규모점포), company, hospital, restaurant, park, cafe, house, bank, car, school, bus_stop, subway_station)
 - 대중교통(버스, 지하철)이용에 따른 승객 승하차 수
-  - (4개 feature : bus_geton_people, bus_getoff_people, subway_geton_people, subway_getoff_people)<br>
+  - (4개 feature : bus_geton_people, bus_getoff_people, subway_geton_people, subway_getoff_people)
 - 지역특성인 하루 평균 연령대별/성별 생활인구
-  - (18개 feature : M_child, M_teenager, M_20, M_30, M_40, M_50, M_60, M_over70, W_child, W_teenager, W_20, W_30, W_40, W_50, W_60, W_over70, M_sum, W_sum)<br>
+  - (18개 feature : M_child, M_teenager, M_20, M_30, M_40, M_50, M_60, M_over70, W_child, W_teenager, W_20, W_30, W_40, W_50, W_60, W_over70, M_sum, W_sum)
+
 총 37개의 feature가 있다.
 
 #### 데이터 획득 경로(독립변수)
@@ -47,10 +50,28 @@
   
 ---> 여러 데이터를 모으다보니 데이터 시점이 맞지 않는 경우가 발생하는 한계가 있었다. 데이터의 시점을 최대한 21년 7월로 통일시켰다. 
 
-
+- 데이터 획득과정 코드
+  - 행정동별_반납건수_대여건수_대여소수.ipynb  
+  - large_com_hos_food_park_cafe_house_data_processing.ipynb  
+  - bank_car_people_data_processing.ipynb  
+  - school_data_processing.ipynb  
+  - 행정동별_버스_승하차인원.ipynb  
+  - 행정동별_지하철역_승하차인원.ipynb  
+  - data_combining.ipynb  
 ## 분석 과정(EDA, 전처리, 모델링, 후처리, 검증 등)
-### 1.EDA(Clustering, 시각화)
+### 1.EDA
+<img src ="https://user-images.githubusercontent.com/105912035/169684355-b0530afe-7a5c-4ad3-a2cf-5049fa9db64b.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/169684671-47a416cb-759a-4c60-bb4e-a64b11db7f12.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/169684437-af583857-cbac-4136-9809-dda8d952c4ca.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/169684443-20befd5b-0913-4308-b2fe-7e09c4ed6e24.png" width="600" heigth="600"/>
 
+- 시설물 feature가 min이 0인 것을 보아 특정 행정동에는 시설물 수가 없을 수도 있음을 확인할 수 있습니다.  
+- 생활인구 feature 와 다른 시설물 feature간에 수치가 차이가 너무 크기에 분석을 진행할 때는 scaling이 필요함을 알 수 있습니다.  
+- 지하철과 버스 승/하차 승객 수를 비교해보면 지하철을 이용하는 사람들이 훨씬 많음을 알 수 있습니다.  
+
+![image](https://user-images.githubusercontent.com/105912035/169684761-ce772689-bdfb-455b-ab46-0dc7378d28f9.png)
+![image](https://user-images.githubusercontent.com/105912035/169684765-001fa82a-22b8-416a-8e4a-3949b1184048.png)
+![image](https://user-images.githubusercontent.com/105912035/169684781-bf72cc86-030a-444e-93f2-e948cf571ad6.png)
 
 
 
