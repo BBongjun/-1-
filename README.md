@@ -1,8 +1,10 @@
-# 데이터마이닝 팀프로젝트 1조 최종 자료
+# 데이터마이닝 팀프로젝트 1조 - 다양한 요인들을 통해 따릉이 대여량 예측 + 영향을 끼치는 요인 파악 및 분석
 
 ## 주제 소개 
 
 ## 분석 배경
+<img src ="https://user-images.githubusercontent.com/105912035/169677587-86dcf3b8-d80f-44c4-9119-5b3093cbdeee.png" width="400" heigth="400"/> <img src ="https://user-images.githubusercontent.com/105912035/169677588-0e91b296-5dad-448a-ab6f-8677d0a9cbb7.png" width="400" heigth="400"/>  
+따
 
 ## 분석 목적
 
