@@ -15,7 +15,7 @@
 은행 : https://data.seoul.go.kr/dataList/10129/S/2/datasetView.do  
 회사 : https://data.seoul.go.kr/dataList/103/S/2/datasetView.do  
 병원 : https://www.data.go.kr/data/15069540/fileData.do  
-학교 :  
+학교 : https://www.data.go.kr/data/15049381/fileData.do  
 자동차 등록현황 : https://data.seoul.go.kr/dataList/OA-21236/F/1/datasetView.do  
 연령대별 생활인구 : http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do  
 음식점 : https://data.seoul.go.kr/dataList/10154/S/2/datasetView.do  
