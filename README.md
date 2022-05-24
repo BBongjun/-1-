@@ -61,10 +61,11 @@
   - data_combining.ipynb  
 ## 데이터 분석
 ### EDA
-<img src ="https://user-images.githubusercontent.com/105912035/169684355-b0530afe-7a5c-4ad3-a2cf-5049fa9db64b.png" width="600" heigth="600"/>
-<img src ="https://user-images.githubusercontent.com/105912035/169684671-47a416cb-759a-4c60-bb4e-a64b11db7f12.png" width="600" heigth="600"/>
-<img src ="https://user-images.githubusercontent.com/105912035/169684437-af583857-cbac-4136-9809-dda8d952c4ca.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/170056907-3d43c8ff-859f-41c1-8b5d-232f9f0eaa5d.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/170057071-73c1e30c-7665-45ff-95fb-e5195179c69f.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/170057201-aca4f526-4172-42b8-9aed-3b5f761739e6.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/169684443-20befd5b-0913-4308-b2fe-7e09c4ed6e24.png" width="600" heigth="600"/>
+
 
 - 시설물 feature가 min이 0인 것을 보아 특정 행정동에는 시설물 수가 없을 수도 있음을 확인할 수 있다.  
 - 생활인구 feature 와 다른 시설물 feature간에 수치가 차이가 너무 크기에 분석을 진행할 때는 scaling이 필요함을 알 수 있다.  
