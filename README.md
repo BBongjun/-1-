@@ -63,7 +63,7 @@
 ### EDA
 <img src ="https://user-images.githubusercontent.com/105912035/170056907-3d43c8ff-859f-41c1-8b5d-232f9f0eaa5d.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/170057071-73c1e30c-7665-45ff-95fb-e5195179c69f.png" width="600" heigth="600"/>
-<img src ="https://user-images.githubusercontent.com/105912035/170057201-aca4f526-4172-42b8-9aed-3b5f761739e6.png" width="600" heigth="600"/>
+<img src ="https://user-images.githubusercontent.com/105912035/170057433-0d2bb104-6763-461f-b102-1a6c1789bb2c.png" width="600" heigth="600"/>
 <img src ="https://user-images.githubusercontent.com/105912035/169684443-20befd5b-0913-4308-b2fe-7e09c4ed6e24.png" width="600" heigth="600"/>
 
 
