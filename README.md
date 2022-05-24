@@ -51,7 +51,8 @@
 ---> 여러 데이터를 모으다보니 데이터 시점이 맞지 않는 경우가 발생하는 한계가 있었다. 데이터의 시점을 최대한 21년 7월로 통일시켰다. 
 
 - 데이터 획득과정 코드
-  - 행정동별_반납건수_대여건수_대여소수.ipynb  
+  - 행정동별_반납건수_대여건수_대여소수.ipynb 
+  - 따릉이대여소_행정동명_행정동코드.ipynb   
   - large_com_hos_food_park_cafe_house_data_processing.ipynb  
   - bank_car_people_data_processing.ipynb  
   - school_data_processing.ipynb  
