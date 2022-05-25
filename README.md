@@ -163,8 +163,9 @@ clustering을 하였을 때 3개의 cluster들이 각각 다른 feature 특징�
 ### Clustering - Outlier 특징 파악 
 반납과 대여에 대한 outlier을 spotfire를 이용하여 확인해보니 같은 행정동임을 확인할 수 있었다.  
 이는 '대여소당_하루평균_대여건수'와 '대여소당_하루평균_반납건수'가 상관계수 1로 높은 상관관계를 갖고 있기 때문에 발생한 현상으로 추측된다.  
-따라서 대여에 대한 outlier만을 이용하여 outlier 값들과 outlier가 아닌 값들에 대한 차이를 분석하고자 한다.  
-여기서 그룹1은 outlier가 1개, 그룹2는 총 instance의 개수가 6개밖에 되지 않기 때문에 outlier를 추출하는 것이 무의미하다 생각하여 그룹0에 대한 분석만을 진행했다.  
+
+따라서 우리는 '전반적인 인프라가 상대적으로 적은 지역'의 대여에 대한 outlier를 파악하여 outlier 값들과 outlier가 아닌 값들에 대한 차이를 분석하고자 한다.
+
   
 outlier가 아닌 값들에 대한 feature 평균값과 outlier들의 feature 값을 비교하여, 많이 차이나는 feature를 통해 rent_day(대여량)이 차이나는 이유에 대하여 해석해보겠다.  
 
