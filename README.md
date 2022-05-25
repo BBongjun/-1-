@@ -149,6 +149,10 @@ Kmeans, Agglomerative 중 cluster 수가 2일 때를 분석하는 것 보다, cl
 
 ### Clustering - cluster별 특징
 clustering을 하였을 때 3개의 cluster들이 각각 다른 feature 특징을 갖고 있음을 확인 할 수 있다.  
+각 cluster의 feature값 분포를 보고 라벨링을 해줬다.  
+- cluster 0 ==> 전반적인 인프라가 상대적으로 적은 지역  
+- cluster 1 ==> 어린이 유동인구가 많고 회사가 많은 지역
+- cluster 2 ==> 전반적인 인프라가 상대적으로 잘 갖춰진 지역
 또한, pca를 사용하여 시각화를 해본 결과, clustering이 꽤 잘 된 것을 확인할 수 있다.
 하지만 target 값(rent_day)은 평균과 분포가 비슷함을 확인할 수 있는데 이는 한 대여소당 감당해야 하는 대여량이 비슷함을 암시한다.  
 즉, 군집의 특성과 상관없이 하루 평균 대여량은 비슷하다는 것인데 유독 모든 feature에서 낮은 값을 가진 cluster0에서 이상치가 많다는 사실을 확인할 수 있다.  
