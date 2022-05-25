@@ -30,6 +30,7 @@
 총 37개의 feature가 있다.
 
 #### 데이터 획득 경로(독립변수)
+도로명주소 데이터, 좌표계 확인 및 변환 : https://anweh.tistory.com/53
 지하철역 위치 : https://data.seoul.go.kr/dataList/OA-21232/S/1/datasetView.do  
 지하철 승하차 인원 : https://data.seoul.go.kr/dataList/OA-21224/S/1/datasetView.do (21.7 데이터)  
 버스정류장 위치 : https://data.seoul.go.kr/dataList/OA-15067/S/1/datasetView.do (22.3.29 데이터)  
