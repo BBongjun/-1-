@@ -96,7 +96,7 @@
 Scaler로 StandardScaler를 사용하였다.
 ### 회귀분석 - 모델링
 사이킷런의 Ride, Lasso, LinearRegression 의 best model을 선정할려고 한다.
-Ridge, Lasso 은 GridsearchCV 와 Kfold를 이용하여 각 모델별 best model을 선정한 후,   LinearRegression 모델을 포함한 3개의 예측모델 중 최고 성능을 보이는 모델을 선정.
+Ridge, Lasso 은 Gridsearch 와 Kfold를 이용하여 각 모델별 best model을 선정한 후,   LinearRegression 모델을 포함한 3개의 예측모델 중 최고 성능을 보이는 모델을 선정.
 
 평가지표로는 R-squared와 MAE로 선정했다. 대여량을 예측하는 것이기 때문에 MAE가 적당한 평가지표라고 생각했다. Validation 시 평가지표로는 best R-squared를 가진 모델을 best모델이라고 생각했다.
 
