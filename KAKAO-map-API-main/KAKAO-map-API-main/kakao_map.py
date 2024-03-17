@@ -46,7 +46,7 @@ def get_code(x,y):
     
 
 
-APP_KEY = 'dc125ad9de42a4ee620f0bdb2e623811' 
+APP_KEY = '본인 api key 수정' 
 URL = 'https://dapi.kakao.com/v2/local/geo/coord2regioncode.json'
 
 df_all = pd.read_csv('공공자전거_대여소_정보.csv') 
